@@ -28,3 +28,5 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
       console.error('Error:', error);
     });
 });
+
+// Done
