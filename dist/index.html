@@ -9,8 +9,16 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
-    <title>Form</title>
+    <title>Survey Form</title>
   </head>
 
   <body>
@@ -19,10 +27,15 @@
         <div class="form__intro">
           <h1>Let's discuss where you're at</h1>
           <h3>
-            Please fill this form so we have a little more information about
+            Please fill out this form so we have a little more information about
             your business, and can know how to better improve your overall
             experience!
           </h3>
+          <div class="socials">
+            <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+            <a href="#"> <i class="fa-brands fa-facebook fa-2x"></i></a>
+          </div>
         </div>
 
         <div class="form__main">
@@ -40,108 +53,80 @@
               <label for="first-name"
                 >First Name <span class="required">*</span></label
               >
-              <input type="text" id="first-name" name="firstName" required />
+              <input
+                type="text"
+                id="first-name"
+                name="firstName"
+                maxlength="20"
+                required
+              />
             </div>
 
             <div class="form__item">
               <label for="last-name"
                 >Last Name <span class="required">*</span></label
               >
-              <input type="text" id="last-name" name="lastName" required />
+              <input
+                type="text"
+                id="last-name"
+                name="lastName"
+                maxlength="25"
+                required
+              />
             </div>
 
             <div class="form__item">
               <label for="company"
                 >Company <span class="required">*</span></label
               >
-              <input type="text" id="company" name="company" required />
+              <input
+                type="text"
+                id="company"
+                name="company"
+                maxlength="50"
+                required
+              />
             </div>
 
             <div class="form__item">
               <label for="work-email"
                 >Work Email <span class="required">*</span></label
               >
-              <input type="email" id="work-email" name="workEmail" required />
+              <input
+                type="email"
+                id="work-email"
+                name="workEmail"
+                maxlength="40"
+                required
+              />
             </div>
 
             <div class="form__item">
-              <div class="form__item__label">
-                Company size <span class="required">*</span>
-              </div>
-
-              <div class="form__item__input form__item--radio">
-                <label for="company-sm">
-                  <input
-                    type="radio"
-                    id="company-sm"
-                    name="companySize"
-                    value="0-10"
-                    required
-                  />
-                  0 - 10</label
-                >
-
-                <label for="company-med">
-                  <input
-                    type="radio"
-                    id="company-med"
-                    name="companySize"
-                    value="11-50"
-                  />
-                  11 - 50</label
-                >
-
-                <label for="company-lg">
-                  <input
-                    type="radio"
-                    id="company-lg"
-                    name="companySize"
-                    value="51-100"
-                  />
-                  51 - 100</label
-                >
-              </div>
+              <label for="company-size"
+                >Company Size <span class="required">*</span></label
+              >
+              <select name="companySize" id="company-size" required>
+                <option value="" selected disabled>Select Company Size</option>
+                <option value="0 - 10">0 - 10</option>
+                <option value="11 - 50">11 - 50</option>
+                <option value="51 - 100">51 - 100</option>
+              </select>
             </div>
 
             <div class="form__item">
-              <div class="form__item__label">Funding Stage</div>
-
-              <div class="form__item__input form__item--radio">
-                <label for="funding-sm">
-                  <input
-                    type="radio"
-                    id="funding-sm"
-                    name="fundingStage"
-                    value="Under ₦100k"
-                  />
-                  Under ₦100k</label
-                >
-
-                <label for="funding-med">
-                  <input
-                    type="radio"
-                    id="funding-med"
-                    name="fundingStage"
-                    value="₦100k-₦500k"
-                  />
-                  ₦100k - ₦500k</label
-                >
-
-                <label for="funding-lg">
-                  <input
-                    type="radio"
-                    id="funding-lg"
-                    name="fundingStage"
-                    value="₦500k-₦1M"
-                  />
-                  ₦500k - ₦1M</label
-                >
-              </div>
+              <label for="funding-stage">Funding Stage</label>
+              <select name="fundingStage" id="funding-stage">
+                <option value="" selected disabled>Select Funding Stage</option>
+                <option value="Under ₦100k">Under ₦100k</option>
+                <option value="₦100k - ₦500k">₦100k - ₦500k</option>
+                <option value="₦500k - ₦1M">₦500k - ₦1M</option>
+                <option value="">Prefer not to answer</option>
+              </select>
             </div>
 
             <div class="form__item">
               <label for="msg">Additional Message</label>
-              <textarea name="msg" id="msg" cols="" rows=""></textarea>
+              <textarea name="msg" id="msg" maxlength="150"></textarea>
             </div>
 
             <button type="submit">Submit</button>

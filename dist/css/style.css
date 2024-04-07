@@ -19,7 +19,7 @@ h1 {
 }
 @media (max-width: 1024px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -37,6 +37,7 @@ h3 {
 
 button {
   cursor: pointer;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   width: 80%;
   border: none;
@@ -86,7 +87,8 @@ button:hover {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
-  background: rgb(19, 26, 27);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.87)), to(rgba(0, 0, 0, 0.87))), url(../img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg) no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.87)), url(../img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg) no-repeat center/cover;
   border-radius: 7px;
 }
 @media (max-width: 1024px) {
@@ -99,6 +101,7 @@ button:hover {
         -ms-flex-direction: column;
             flex-direction: column;
     padding-top: 2rem;
+    background-position: left;
   }
 }
 .form__intro {
@@ -111,16 +114,33 @@ button:hover {
     text-align: center;
   }
 }
+.form__intro .socials {
+  margin-top: 10rem;
+}
+@media (max-width: 1024px) {
+  .form__intro .socials {
+    margin-top: 1rem;
+  }
+}
+.form__intro a {
+  margin-right: 10px;
+  color: rgb(216, 187, 255);
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+}
+@media (max-width: 1024px) {
+  .form__intro a {
+    margin: 0 7px;
+  }
+}
+.form__intro a:hover {
+  color: rgb(161, 116, 219);
+}
 .form__main {
   background: #f8f8f8;
   color: rgb(74, 47, 102);
-  padding: 1rem 2rem;
+  padding: 2rem;
   border-radius: 7px;
-}
-@media (max-width: 1024px) {
-  .form__main {
-    padding: 2rem;
-  }
 }
 .form__items {
   display: grid;
@@ -154,33 +174,33 @@ button:hover {
           flex-direction: column;
   margin-bottom: 15px;
 }
-.form__item > input {
+.form__item > label {
+  font-size: 12px;
+  font-weight: 600;
+}
+.form__item > input,
+.form__item > select {
+  font-family: "Inter", sans-serif;
   border: 1px solid #999;
   margin-top: 5px;
   border-radius: 5px;
   height: 25px;
+  padding: 0 10px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+.form__item > input:focus,
+.form__item > select:focus {
+  background: rgba(216, 187, 255, 0.726);
 }
 .form__item > textarea {
+  font-family: "Inter", sans-serif;
   height: 100px;
   border: 1px solid #999;
   border-radius: 5px;
   margin-top: 5px;
+  padding: 5px 10px;
 }
-.form__item--radio {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  font-size: 14px;
-  margin-top: 5px;
-}
-@media (max-width: 1024px) {
-  .form__item--radio {
-    font-size: 12px;
-  }
-}
-.form__item--radio label {
-  font-weight: 550;
-}
-.form__item__label, .form__item > label {
-  font-size: 12px;
-  font-weight: 600;
+.form__item > textarea:focus {
+  background: rgba(216, 187, 255, 0.726);
 }

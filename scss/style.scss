@@ -1,5 +1,11 @@
-@import 'mixins';
+// MIXIN
+@mixin breakpoint-down {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
 
+// STYLES
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,10 +18,6 @@ body {
   line-height: 1.2;
 }
 
-h1,
-h2 {
-}
-
 h1 {
   font-size: 2rem;
   font-weight: 500;
@@ -23,7 +25,7 @@ h1 {
   line-height: 1;
 
   @include breakpoint-down {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
 }
 
@@ -41,6 +43,7 @@ h3 {
 
 button {
   cursor: pointer;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   width: 80%;
   border: none;
@@ -84,13 +87,15 @@ button {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
-    background: rgb(19, 26, 27);
+    background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.87)),
+      url(../img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg) no-repeat center / cover;
     border-radius: 7px;
 
     @include breakpoint-down {
       display: flex;
       flex-direction: column;
       padding-top: 2rem;
+      background-position: left;
     }
   }
 
@@ -102,17 +107,35 @@ button {
       margin: auto 2rem;
       text-align: center;
     }
+
+    .socials {
+      margin-top: 10rem;
+
+      @include breakpoint-down {
+        margin-top: 1rem;
+      }
+    }
+
+    a {
+      margin-right: 10px;
+      color: rgb(216, 187, 255);
+      transition-duration: 200ms;
+
+      @include breakpoint-down {
+        margin: 0 7px;
+      }
+
+      &:hover {
+        color: rgb(161, 116, 219);
+      }
+    }
   }
 
   &__main {
     background: #f8f8f8;
     color: rgb(74, 47, 102);
-    padding: 1rem 2rem;
+    padding: 2rem;
     border-radius: 7px;
-
-    @include breakpoint-down {
-      padding: 2rem;
-    }
   }
 
   &__items {
@@ -145,42 +168,37 @@ button {
     margin-bottom: 15px;
 
     > label {
+      font-size: 12px;
+      // color: #444;
+      font-weight: 600;
     }
 
-    > input {
+    > input,
+    > select {
+      font-family: 'Inter', sans-serif;
       border: 1px solid #999;
       margin-top: 5px;
       border-radius: 5px;
       height: 25px;
+      padding: 0 10px;
+      transition: all 200ms;
+
+      &:focus {
+        background: rgba(216, 187, 255, 0.726);
+      }
     }
 
     > textarea {
+      font-family: 'Inter', sans-serif;
       height: 100px;
       border: 1px solid #999;
       border-radius: 5px;
       margin-top: 5px;
-    }
+      padding: 5px 10px;
 
-    &--radio {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      font-size: 14px;
-      margin-top: 5px;
-
-      @include breakpoint-down {
-        font-size: 12px;
-      }
-
-      label {
-        font-weight: 550;
+      &:focus {
+        background: rgba(216, 187, 255, 0.726);
       }
     }
-  }
-
-  &__item__label,
-  &__item > label {
-    font-size: 12px;
-    // color: #444;
-    font-weight: 600;
   }
 }
