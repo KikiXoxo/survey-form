@@ -9,13 +9,20 @@ document.getElementById('myForm').addEventListener('submit', function (e) {
   fetch('https://eodh6njvzgfl22j.m.pipedream.net', {
     method: 'POST',
     body: formData,
-  }).then(res => {
-    if (res.ok) {
-      // Clear the form after successful submission
-      document.getElementById('myForm').reset();
-      return res.json();
-    } else {
-      throw new Error('Network is not okay');
-    }
-  });
+  })
+    .then(res => {
+      if (res.ok) {
+        document.getElementById('myForm').reset(); // Resest form
+
+        // Alternative to form reset - Redirect page
+        // window.location.href = 'success.html'; // Payload kept disapperaing after redirect
+
+        return res.json();
+      } else {
+        throw new Error('Network is not okay');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 });

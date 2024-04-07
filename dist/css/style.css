@@ -35,8 +35,10 @@ h3 {
   line-height: 1.5;
 }
 
-button {
+button,
+.btn {
   cursor: pointer;
+  text-decoration: none;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   width: 80%;
@@ -49,7 +51,8 @@ button {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
 }
-button:hover {
+button:hover,
+.btn:hover {
   opacity: 0.85;
 }
 
@@ -82,6 +85,12 @@ button:hover {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.header--success {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.87)), to(rgba(0, 0, 0, 0.87))), url(../img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg) no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.87)), url(../img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg) no-repeat center/cover;
+  text-align: center;
+  padding: 2rem;
+}
 
 .form__header {
   display: grid;
@@ -113,28 +122,6 @@ button:hover {
     margin: auto 2rem;
     text-align: center;
   }
-}
-.form__intro .socials {
-  margin-top: 10rem;
-}
-@media (max-width: 1024px) {
-  .form__intro .socials {
-    margin-top: 1rem;
-  }
-}
-.form__intro a {
-  margin-right: 10px;
-  color: rgb(216, 187, 255);
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-}
-@media (max-width: 1024px) {
-  .form__intro a {
-    margin: 0 7px;
-  }
-}
-.form__intro a:hover {
-  color: rgb(161, 116, 219);
 }
 .form__main {
   background: #f8f8f8;
@@ -203,4 +190,62 @@ button:hover {
 }
 .form__item > textarea:focus {
   background: rgba(216, 187, 255, 0.726);
+}
+
+.socials {
+  margin-top: 10rem;
+}
+@media (max-width: 1024px) {
+  .socials {
+    margin-top: 1rem;
+  }
+}
+.socials a {
+  margin-right: 10px;
+  color: rgb(216, 187, 255);
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+}
+@media (max-width: 1024px) {
+  .socials a {
+    margin: 0 7px;
+  }
+}
+.socials a:hover {
+  color: rgb(161, 116, 219);
+}
+
+.header--success .container {
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.header--success .container .btn--return {
+  background: rgb(216, 187, 255);
+  color: black;
+  font-weight: 500;
+  min-width: 60%;
+  font-size: 1.2rem;
+  margin-top: 5rem;
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms;
+}
+@media (max-width: 1024px) {
+  .header--success .container .btn--return {
+    font-size: 1rem;
+  }
+}
+.header--success .container .btn--return:hover {
+  background: rgb(161, 116, 219);
 }

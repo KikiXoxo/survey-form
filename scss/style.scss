@@ -5,7 +5,7 @@
   }
 }
 
-// STYLES
+// GENERAL STYLES
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,8 +41,10 @@ h3 {
   line-height: 1.5;
 }
 
-button {
+button,
+.btn {
   cursor: pointer;
+  text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   width: 80%;
@@ -74,14 +76,23 @@ button {
   color: rgb(223, 0, 0);
 }
 
+// HEADERS
 .header {
   background: rgb(216, 187, 255);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &--success {
+    background: linear-gradient(rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.87)),
+      url(../img/dylan-gillis-KdeqA3aTnBY-unsplash.jpg) no-repeat center / cover;
+    text-align: center;
+    padding: 2rem;
+  }
 }
 
+// MAIN FORM STYLES
 .form {
   &__header {
     display: grid;
@@ -106,28 +117,6 @@ button {
     @include breakpoint-down {
       margin: auto 2rem;
       text-align: center;
-    }
-
-    .socials {
-      margin-top: 10rem;
-
-      @include breakpoint-down {
-        margin-top: 1rem;
-      }
-    }
-
-    a {
-      margin-right: 10px;
-      color: rgb(216, 187, 255);
-      transition-duration: 200ms;
-
-      @include breakpoint-down {
-        margin: 0 7px;
-      }
-
-      &:hover {
-        color: rgb(161, 116, 219);
-      }
     }
   }
 
@@ -199,6 +188,55 @@ button {
       &:focus {
         background: rgba(216, 187, 255, 0.726);
       }
+    }
+  }
+}
+
+.socials {
+  margin-top: 10rem;
+
+  @include breakpoint-down {
+    margin-top: 1rem;
+  }
+
+  a {
+    margin-right: 10px;
+    color: rgb(216, 187, 255);
+    transition-duration: 200ms;
+
+    @include breakpoint-down {
+      margin: 0 7px;
+    }
+
+    &:hover {
+      color: rgb(161, 116, 219);
+    }
+  }
+}
+
+// SUCCESS PAGE
+.header--success .container {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .btn--return {
+    background: rgb(216, 187, 255);
+    color: black;
+    font-weight: 500;
+    min-width: 60%;
+    font-size: 1.2rem;
+    margin-top: 5rem;
+    transition-duration: 200ms;
+
+    @include breakpoint-down() {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background: rgb(161, 116, 219);
     }
   }
 }
